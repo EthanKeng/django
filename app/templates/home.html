@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- <a href="{% url 'home' %}">HomePage</a> | <a href="{% url 'about' %}">About</a> -->
+
+<p>
+    this is HomePage!
+</p>
+<img src="{% static 'img/yokohama.jpg' %}" alt="" style="width: 700px;">
+{% endblock %}

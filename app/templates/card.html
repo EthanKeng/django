@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block titleee %}Business Card{% endblock %}
+{% block content %}
+
+<h2>
+    Business Card
+</h2>
+<div class="container">
+    <div class="row">
+        {% for i in all_cards %}
+        <div class="col-sm">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{i.first_name}} {{i.last_name}}</h5>
+                    <p class="card-text">
+                        {{i.company}}<br />
+                        {{i.title}}<br />
+                        {{i.sideBusiness}}<br />
+                        {{i.email}}<br />
+                        {{i.country}}<br />
+                        {{i.city}}<br />
+                    </p>
+                    <a href="#" class="btn btn-primary">Edit</a>
+                </div>
+            </div>
+            <br>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

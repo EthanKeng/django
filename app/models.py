@@ -12,4 +12,4 @@ class Card(models.Model):
     city = models.CharField(max_length=70)
     
     def __str__(self):
-        return self.name
+        return self.first_name+" "+ self.last_name

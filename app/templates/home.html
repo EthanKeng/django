@@ -4,8 +4,14 @@
 
 <!-- <a href="{% url 'home' %}">HomePage</a> | <a href="{% url 'about' %}">About</a> -->
 
+<h2>Home Page</h2>
+
 <p>
-    This pic is token some where near my home in Yokohama, Japan.
+    This website is built by Django framework. My first python framework website.
 </p>
-<img src="{% static 'img/yokohama.jpg' %}" alt="yokohama view" style="width: 700px;">
+
+<figure class="figure">
+    <img src="{% static 'img/yokohama.jpg' %}" alt="yokohama view" style="width: 700px;" class="figure-img img-fluid rounded">
+    <figcaption class="figure-caption">This pic is token some where near my home in Yokohama, Japan.</figcaption>
+  </figure>
 {% endblock %}

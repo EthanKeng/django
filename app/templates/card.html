@@ -13,14 +13,12 @@
                 <div class="card-body">
                     <h5 class="card-title">{{i.first_name}} {{i.last_name}}</h5>
                     <p class="card-text">
-                        {{i.company}}<br />
-                        {{i.title}}<br />
+                        {{i.title}} @ {{i.company}}<br />
                         {{i.sideBusiness}}<br />
                         {{i.email}}<br />
-                        {{i.country}}<br />
-                        {{i.city}}<br />
+                        {{i.city}}, {{i.country}}<br />
                     </p>
-                    <a href="#" class="btn btn-primary">Edit</a>
+                    <a href="{% url 'edit' i.id %}" class="btn btn-primary">Edit</a>
                 </div>
             </div>
             <br>

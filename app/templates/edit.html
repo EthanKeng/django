@@ -1,58 +1,65 @@
 {% extends 'base.html' %}
-{% block titleee %}Add Card{% endblock %}
 {% block content %}
 
-<h2>
-    Add card...
-</h2>
-<hr>
 
+<h2>Edit crad info</h2>
+
+{% if get_card %}
 <form method="POST">{% csrf_token %}
     <!--     ['first_name' ,'last_name' ,'company' ,'title' ,'sideBusiness' ,'email' ,'country' ,'city' ]
  -->
     <div class="form-group">
         <input type="text" name="first_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-            placeholder="First Name">
+            value="{{ get_card.first_name }}">
     </div>
 
 
     <div class="form-group">
         <input type="text" name="last_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-            placeholder="Last Name">
+            value="{{ get_card.last_name }}">
     </div>
 
     <div class="form-group">
         <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-            placeholder="Email Address">
+            value="{{ get_card.email }}">
     </div>
 
 
     <div class="form-group">
         <input type="text" name="company" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-            placeholder="Company Name">
+            value="{{ get_card.company }}">
     </div>
 
     <div class="form-group">
         <input type="text" name="title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-            placeholder="Your Title">
+            value="{{ get_card.title }}">
     </div>
 
     <div class="form-group">
         <input type="text" name="sideBusiness" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-            placeholder="Any Side Business?">
+            value="{{ get_card.sideBusiness }}">
     </div>
 
     <div class="form-group">
         <input type="text" name="country" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-            placeholder="Living Country">
+            value="{{ get_card.country }}">
     </div>
     <div class="form-group">
         <input type="text" name="city" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-            placeholder="Living City">
+            value="{{ get_card.city }}">
+    </div>
+    <div class="form-group">
+        <input type="hidden" name="id" value="{{ get_card.id }}">
     </div>
 
-
-    <button type="submit" class="btn btn-secondary">Add Card</button>
+    <button type="submit" class="btn btn-secondary">Edit Card</button>
+    
 </form>
+<br>
+<form action="{% url 'delete' get_card.id %}" method="POST"> {% csrf_token %}
+    <input type="hidden" name="id" value="{{ get_card.id }}">
+    <button type="submit" class="btn btn-danger">Delete Card</button>
+</form>
+{% endif %}
 
 {% endblock %}
